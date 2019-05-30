@@ -1,0 +1,84 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css";
+
+@keyframes bounce-1 {
+    0%   { transform: translate(-100px,0);}
+    15%  { transform: translate(-90px,-50px); transform: scale3d(0.5,0.5,0.5);}
+    30% { transform: translate(-75px,0);transform: scale3d(1,1,1);}
+    45%  { transform: translate(-60px,-50px);transform: scale3d(1.5,1.5,1.5); }
+    60% { transform: translate(-45px,0);transform: scale3d(1,1,1);}
+    75%  { transform: translate(-30px,-50px);transform: scale3d(0.5,0.5,0.5);}
+    90% { transform: translate(-15px,-25px);transform: scale3d(1,1,1);}
+    100% { transform: translate(0,0);}
+}
+
+body{
+  margin: 0;
+  font-family: Verdana, Geneva, sans-serif;
+  color: #706E14;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+}
+.main-container {
+  min-height: 83vh;
+}
+
+.first-container{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  min-height:50vh;
+  &:div{
+    height:100%;
+  }
+}
+
+.info-stat{
+  border: 5px solid rgba(153, 51, 51, 0.8);
+  border-radius: 20px;
+  background-color: rgba(153, 51, 51, 0.1);
+  min-height: 25vh;
+  margin-bottom: 1vh;
+  .row{
+    height:50%;
+  }
+}
+
+.detail {
+  border: 5px solid rgba(153, 51, 51, 0.8);
+  border-radius: 20px;
+  background-color: rgba(153, 51, 51, 0.1);
+  min-height: 25vh;
+
+}
+
+img {
+  height: 80%;
+  width: 80%;
+  object-fit: scale-down;
+  animation: bounce-1;
+  animation-duration: 2s;
+}
+
+#pokemon-picture {
+  background-image: url("computer_2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  align-content: center;
+  height: 25vh;
+  width: 100%;
+}
+
+.logo{
+  background-image: url("trainerLogo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 10vh;
+}
+
+form{
+  padding-left: 1vh;
+}
