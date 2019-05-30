@@ -41,19 +41,24 @@ body {
   font-style: italic;
   font-variant: normal;
   text-transform: none;
+  text-align: center;
+  padding-right: 400px;
 }
+
 
 .main-container {
   min-height: 83vh;
+  padding-right: 400px;
 }
 
 .first-container {
   margin-top: 2vh;
   margin-bottom: 2vh;
   min-height: 50vh;
+  padding-right: 300px;
 }
 .first-container:div {
-  height: 100%;
+  height: 40%;
 }
 
 .info-stat {
@@ -91,16 +96,23 @@ img {
   width: 100%;
 }
 
-.logo {
+/* .logo {
   background-image: url("trainerLogo.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   min-height: 10vh;
-}
+} */
 
 form {
   padding-left: 1vh;
 }
+
+img{
+  height: 250px;
+  width: 250px;
+}
+
+
 
 /*# sourceMappingURL=output.css.map */

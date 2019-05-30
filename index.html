@@ -10,132 +10,140 @@
     <title>PokeDex</title>
   </head>
   <body>
-      <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <input type="search" id="myInput" onsearch="fetch()">
-          </a>
-        </li>
-        <li class="dropdown col-3">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            History
-          </button>
-          <div class="dropdown-menu" id="dropdown" aria-labelledby="dropdownMenuButton">
-          </div>
-        </li>
-      </ul>
-      <section class="container main-container">
-        <div class="container first-container">
-          <div class="row">
-            <div class="col-md-3 col-sm-12" id ="pokemon-picture"></div>
-            <div class ="container col-sm-12 col-md-9">
-              <div class="info-stat col-12">
-                <div class="row">
-                  <div class="col-3">
-                    <label>Name</label>
-                    <h5 id="name"> </h5>
-                  </div>
-                  <div class="col-3">
-                    <label>ID</label>
-                    <h5 id = "id"> </h5>
-                  </div>
-                  <div class="col-3">
-                    <label>Height</label>
-                    <h5 id="height"> </h4>
+    <div class="row">
+      <div class="col-4">
+        <h1>Red Tan</h1>
+        <img src="https://slack-imgs.com/?c=1&url=https%3A%2F%2Fwww.ssbwiki.com%2Fimages%2Fthumb%2Fa%2Fa0%2FFRLGMaleTrainer.png%2F200px-FRLGMaleTrainer.png" alt="">
+      </div>
+      <div class="col-8">
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <input type="search" id="myInput" onsearch="fetch()">
+            </a>
+          </li>
+          <li class="dropdown col-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              History
+            </button>
+            <div class="dropdown-menu" id="dropdown" aria-labelledby="dropdownMenuButton">
+            </div>
+          </li>
+        </ul>
+        <section class="container main-container">
+          <div class="container first-container">
+            <div class="row">
+              <div class="col-md-3 col-sm-12" id ="pokemon-picture"></div>
+              <div class ="container col-sm-12 col-md-9">
+                <div class="info-stat col-12">
+                  <div class="row">
+                    <div class="col-3">
+                      <label>Name</label>
+                      <h5 id="name"> </h5>
                     </div>
                     <div class="col-3">
-                      <label>Weight</label>
-                      <h5 id="weight"> </h5>
+                      <label>ID</label>
+                      <h5 id = "id"> </h5>
+                    </div>
+                    <div class="col-3">
+                      <label>Height</label>
+                      <h5 id="height"> </h4>
+                      </div>
+                      <div class="col-3">
+                        <label>Weight</label>
+                        <h5 id="weight"> </h5>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <label>Abilities</label>
+                        <h5 id="ability"> </h5>
+                      </div>
+                      <div class="col-6">
+                        <label>Type</label>
+                        <h5 id="type"> </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="detail">
+                    <form>
+                      <label> More details About the Pokemon </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio" onclick="loaddetail('en')">English
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio" onclick="loaddetail('fr')">Français
+                      </label>
+                    </form>
+                    <p id="pokemon-detail"></p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class ="container col-sm-12 col-md-9 info-stat">
+                  <div class="row">
+                    <div class="col-4">
+                      <label>HP</label>
+                      <h5 id ="hp"> </h5>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" id="hp-progress" role="progressbar" style="width:0%">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <label>Attack</label>
+                      <h5 id="attack"> </h5>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" id="attack-progress" role="progressbar" style="width:0%">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <label>Defense</label>
+                      <h5 id="defense"> </h5>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" id="defense-progress" role="progressbar" style="width:0%">
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-6">
-                      <label>Abilities</label>
-                      <h5 id="ability"> </h5>
+                    <div class="col-4">
+                      <label>Special Attack</label>
+                      <h5 id = "special-attack"> </h5>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" id="sa-progress" role="progressbar" style="width:0%"></div>
+                      </div>
                     </div>
-                    <div class="col-6">
-                      <label>Type</label>
-                      <h5 id="type"> </h5>
+                    <div class="col-4">
+                      <label>Special Defense</label>
+                      <h5 id="special-defense"> </h5>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" id="sd-progress" role="progressbar" style="width:0%">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <label>Speed</label>
+                      <h5 id="speed"> </h5>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" id="sp-progress" role="progressbar" style="width:0%">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="detail">
-                  <form>
-                    <label> More details About the Pokemon </label>
-                    <label class="radio-inline">
-                      <input type="radio" name="optradio" onclick="loaddetail('en')">English
-                    </label>
-                    <label class="radio-inline">
-                      <input type="radio" name="optradio" onclick="loaddetail('fr')">Français
-                    </label>
-                  </form>
-                  <p id="pokemon-detail"></p>
+                <div class="col-md-3 col-sm-12 logo">
                 </div>
-              </div>
 
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class ="container col-sm-12 col-md-9 info-stat">
-                <div class="row">
-                  <div class="col-4">
-                    <label>HP</label>
-                    <h5 id ="hp"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="hp-progress" role="progressbar" style="width:0%">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <label>Attack</label>
-                    <h5 id="attack"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="attack-progress" role="progressbar" style="width:0%">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <label>Defense</label>
-                    <h5 id="defense"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="defense-progress" role="progressbar" style="width:0%">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-4">
-                    <label>Special Attack</label>
-                    <h5 id = "special-attack"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="sa-progress" role="progressbar" style="width:0%"></div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <label>Special Defense</label>
-                    <h5 id="special-defense"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="sd-progress" role="progressbar" style="width:0%">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <label>Speed</label>
-                    <h5 id="speed"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="sp-progress" role="progressbar" style="width:0%">
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
-              <div class="col-md-3 col-sm-12 logo">
-              </div>
-
             </div>
-          </div>
-        </section>
+          </section>
+      </div>
+    </div>
     <script src="main.js" charset="utf-8"></script>
   </body>
 </html>
