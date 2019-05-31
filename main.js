@@ -260,6 +260,7 @@ function show(pokemon) {
   }
   img = document.createElement('IMG')
   img.setAttribute("src", pokemon.url);
+  img.setAttribute("id", "poki-picture")
   document.getElementById('pokemon-picture').appendChild(img)
 
 
