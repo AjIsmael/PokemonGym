@@ -1,4 +1,7 @@
 window.speechSynthesis.cancel()
+jimmyTrainer = "https://cdn.bulbagarden.net/upload/2/27/Black_2_White_2_Ghetsis.png"
+ajaebTrainer = "https://vignette.wikia.nocookie.net/fantasypokemonfanon/images/f/f3/Michael.png/revision/latest?cb=20140620002843"
+kevinTrainer = "https://vignette.wikia.nocookie.net/nintendo/images/2/2b/SM_Red.png/revision/latest?cb=20161103045713&path-prefix=en"
 
 function loadDoc(nameforUrl, trainerArray,trainerArrayName) {
   var xhttp = new XMLHttpRequest();
@@ -144,6 +147,20 @@ kevin.addPokemon("volcarona")
 
 function fetch(trainer){
   window.speechSynthesis.cancel();
+  if(document.getElementById('trainer-container').childElementCount > 1){
+    document.getElementById('trainer-container').removeChild(document.getElementById('trainer-container').children[1])
+  }
+  trainerimg = document.createElement('IMG')
+  if(trainer == 'jimmy'){
+    trainerimg.setAttribute("src", jimmyTrainer)
+  } else if (trainer == 'ajaeb') {
+    trainerimg.setAttribute("src", ajaebTrainer)
+  } else{
+    trainerimg.setAttribute("src", kevinTrainer)
+  }
+
+  trainerimg.setAttribute("id", "trainer-trainerPicture")
+  document.getElementById('trainer-container').appendChild(trainerimg)
   let element = document.getElementById('dropdown')
   while (element.firstChild) {
     element.removeChild(element.firstChild);

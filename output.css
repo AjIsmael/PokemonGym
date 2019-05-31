@@ -113,15 +113,15 @@ form {
   animation-duration: 2s;
 }
 
-#trainer-picture {
+body {
+  background-color: black;
+}
+
+#trainer-container img {
   height: 470px;
   width: 450px;
   animation: bounce-1;
   animation-duration: 2s;
-}
-
-body {
-  background-color: black;
 }
 
 /*# sourceMappingURL=output.css.map */
