@@ -18,7 +18,7 @@ function loadDoc(nameforUrl, trainerArray,trainerArrayName) {
         a++;
       }
       a = new Pokemon(myObj['forms'][0]['name'],myObj.id,myObj.height,myObj.weight,ability,type,myObj.stats[5].base_stat,myObj.stats[4].base_stat,myObj.stats[3].base_stat,myObj.stats[2].base_stat,myObj.stats[1].base_stat,myObj.stats[0].base_stat,myObj.sprites.front_default,trainerArray,trainerArrayName)
-      setTimeout(show(trainerArray,trainerArrayName),250)
+      //setTimeout(show(trainerArray,trainerArrayName),250)
     }
   };
   if (isNaN(nameforUrl)){
@@ -115,7 +115,7 @@ class Trainer{
   get(identifier){
     if(this.trainerPokemonName.includes(identifier)){
       let b = this.trainerPokemonName.indexOf(identifier)
-      console.log(this.pokemonCollector[b]);
+      show(this.pokemonCollector[b]);
     } else {
       console.log("You don't have this Pokemon in your collection");
     }
@@ -128,17 +128,39 @@ class Trainer{
 
 
 ajaeb = new Trainer("Ajaeb")
+ajaeb.addPokemon("arcanine")
+ajaeb.addPokemon("kadabra")
+ajaeb.addPokemon("machoke")
+jimmy = new Trainer("Jimmy")
+jimmy.addPokemon("lucario")
+jimmy.addPokemon("trapinch")
+jimmy.addPokemon("incineroar")
+kevin = new Trainer("Kevin")
+kevin.addPokemon("gallade")
+kevin.addPokemon("mismagius")
+kevin.addPokemon("volcarona")
 
 
-function fetch(){
+
+function fetch(trainer){
   window.speechSynthesis.cancel();
-  var x = document.getElementById("myInput");
-  ajaeb.addPokemon(x.value)
+  let element = document.getElementById('dropdown')
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+
+  for (var poki of window[trainer].trainerPokemonName) {
+    his = document.createElement('a');
+    his.setAttribute("class", 'dropdown-item');
+    his.setAttribute('href', `javascript:${trainer}.get('${poki}')`);
+    his.innerHTML = poki;
+    document.getElementById('dropdown').appendChild(his)
+
+  }
 }
 
 
-function show(pokemonList, pokemonNameList) {
-  pokemon = pokemonList[pokemonList.length-1]
+function show(pokemon) {
   document.getElementById('height').innerHTML = pokemon.height
   document.getElementById('weight').innerHTML = pokemon.weight
   document.getElementById('name').innerHTML = pokemon.name
@@ -240,12 +262,5 @@ function show(pokemonList, pokemonNameList) {
   img.setAttribute("src", pokemon.url);
   document.getElementById('pokemon-picture').appendChild(img)
 
-  his = document.createElement('a');
-  his.setAttribute("class", 'dropdown-item');
-  his.setAttribute('href', `javascript:ajaeb.addPokemon('${pokemon.name}')`);
-  his.innerHTML = pokemon.name;
-  document.getElementById('dropdown').appendChild(his)
-  if(document.getElementById('dropdown').childElementCount == 11){
-    document.getElementById('dropdown').removeChild(document.getElementById('dropdown').children[0])
-  }
+
 }
