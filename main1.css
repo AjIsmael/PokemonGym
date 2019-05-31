@@ -4,13 +4,17 @@
 }
 
 .first-page img{
-  width: 15%;
+  z-index: 0;
+  width: 30%;
   position: absolute;
-  top: 17%;
-  left: 6%;
+  top: 8%;
+  left: 35%;
   animation: fade-out 3s  infinite normal;
 }
-
+.card {
+  top:25vh;
+  opacity: 0.8;
+}
 @keyframes fade-out {
   0% {
         transform: rotateY(0);
