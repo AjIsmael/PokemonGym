@@ -7,135 +7,163 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="main1.css">
     <title>PokeDex</title>
   </head>
   <body>
-      <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <input type="search" id="myInput" onsearch="fetch()">
-          </a>
-        </li>
-        <li class="dropdown col-3">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            History
-          </button>
-          <div class="dropdown-menu" id="dropdown" aria-labelledby="dropdownMenuButton">
-          </div>
-        </li>
-      </ul>
-      <section class="container main-container">
-        <div class="container first-container">
+    <div class="bg-dark first-page">
+      <div>
+        <img src="badge.png" alt="">
+      </div>
+        <div class="container">
           <div class="row">
-            <div class="col-md-3 col-sm-12" id ="pokemon-picture"></div>
-            <div class ="container col-sm-12 col-md-9">
-              <div class="info-stat col-12">
-                <div class="row">
-                  <div class="col-3">
-                    <label>Name</label>
-                    <h5 id="name"> </h5>
-                  </div>
-                  <div class="col-3">
-                    <label>ID</label>
-                    <h5 id = "id"> </h5>
-                  </div>
-                  <div class="col-3">
-                    <label>Height</label>
-                    <h5 id="height"> </h4>
-                    </div>
-                    <div class="col-3">
-                      <label>Weight</label>
-                      <h5 id="weight"> </h5>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-6">
-                      <label>Abilities</label>
-                      <h5 id="ability"> </h5>
-                    </div>
-                    <div class="col-6">
-                      <label>Type</label>
-                      <h5 id="type"> </h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="detail">
-                  <form>
-                    <label> More details About the Pokemon </label>
-                    <label class="radio-inline">
-                      <input type="radio" name="optradio" onclick="loaddetail('en')">English
-                    </label>
-                    <label class="radio-inline">
-                      <input type="radio" name="optradio" onclick="loaddetail('fr')">Français
-                    </label>
-                  </form>
-                  <p id="pokemon-detail"></p>
-                </div>
+            <div class="col-md-6 mx-auto">
+              <div class="card bg-info mt-5 p-4">
+                <h1 class="text-center text-white">Welcome to AJK City gym</h1>
+                <h2 class="text-center text-white">Choose a trainer!</h2>
+                <p class="text-center text-white">Defeat us and claim the <strong>Interpolation Badge!</strong></p>
+
+                      <button type="button" id="Jimmy" class="form-control form-control-md" onclick=""><strong>Jimmy</strong></button>
+                      <p class="text-center text-white">Placeholder title</p>
+                      <button type="button" id="Ajaeb" class="form-control form-control-md" onclick=""><strong>Ajaeb</strong></button>
+                      <p class="text-center text-white">Placeholder title</p>
+                      <button type="button" id="Kevin" class="form-control form-control-md" onclick=""><strong>Kevin</strong></button>
+                      <p class="text-center text-white">Meister of Dawn and Dusk</p>
+
               </div>
 
             </div>
           </div>
-          <div class="container">
-            <div class="row">
-              <div class ="container col-sm-12 col-md-9 info-stat">
-                <div class="row">
-                  <div class="col-4">
-                    <label>HP</label>
-                    <h5 id ="hp"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="hp-progress" role="progressbar" style="width:0%">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <label>Attack</label>
-                    <h5 id="attack"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="attack-progress" role="progressbar" style="width:0%">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <label>Defense</label>
-                    <h5 id="defense"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="defense-progress" role="progressbar" style="width:0%">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-4">
-                    <label>Special Attack</label>
-                    <h5 id = "special-attack"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="sa-progress" role="progressbar" style="width:0%"></div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <label>Special Defense</label>
-                    <h5 id="special-defense"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="sd-progress" role="progressbar" style="width:0%">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <label>Speed</label>
-                    <h5 id="speed"> </h5>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped active" id="sp-progress" role="progressbar" style="width:0%">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 logo">
-              </div>
+        </div>
 
+    </div>
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <input type="search" id="myInput" onsearch="fetch()">
+        </a>
+      </li>
+      <li class="dropdown col-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          History
+        </button>
+        <div class="dropdown-menu" id="dropdown" aria-labelledby="dropdownMenuButton">
+        </div>
+      </li>
+    </ul>
+    <section class="container main-container">
+      <div class="container first-container">
+        <div class="row">
+          <div class="col-md-3 col-sm-12" id ="pokemon-picture"></div>
+          <div class ="container col-sm-12 col-md-9">
+            <div class="info-stat col-12">
+              <div class="row">
+                <div class="col-3">
+                  <label>Name</label>
+                  <h5 id="name"> </h5>
+                </div>
+                <div class="col-3">
+                  <label>ID</label>
+                  <h5 id = "id"> </h5>
+                </div>
+                <div class="col-3">
+                  <label>Height</label>
+                  <h5 id="height"> </h4>
+                  </div>
+                  <div class="col-3">
+                    <label>Weight</label>
+                    <h5 id="weight"> </h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <label>Abilities</label>
+                    <h5 id="ability"> </h5>
+                  </div>
+                  <div class="col-6">
+                    <label>Type</label>
+                    <h5 id="type"> </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="detail">
+                <form>
+                  <label> More details About the Pokemon </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio" onclick="loaddetail('en')">English
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio" onclick="loaddetail('fr')">Français
+                  </label>
+                </form>
+                <p id="pokemon-detail"></p>
+              </div>
             </div>
+
           </div>
-        </section>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class ="container col-sm-12 col-md-9 info-stat">
+              <div class="row">
+                <div class="col-4">
+                  <label>HP</label>
+                  <h5 id ="hp"> </h5>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" id="hp-progress" role="progressbar" style="width:0%">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <label>Attack</label>
+                  <h5 id="attack"> </h5>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" id="attack-progress" role="progressbar" style="width:0%">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <label>Defense</label>
+                  <h5 id="defense"> </h5>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" id="defense-progress" role="progressbar" style="width:0%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <label>Special Attack</label>
+                  <h5 id = "special-attack"> </h5>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" id="sa-progress" role="progressbar" style="width:0%"></div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <label>Special Defense</label>
+                  <h5 id="special-defense"> </h5>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" id="sd-progress" role="progressbar" style="width:0%">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <label>Speed</label>
+                  <h5 id="speed"> </h5>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" id="sp-progress" role="progressbar" style="width:0%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 logo">
+            </div>
+
+          </div>
+        </div>
+      </section>
     <script src="main.js" charset="utf-8"></script>
   </body>
 </html>
