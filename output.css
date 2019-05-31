@@ -83,7 +83,6 @@ img {
 }
 
 #pokemon-picture {
-  background-image: url("computer_2.png");
   background-size: contain;
   background-repeat: no-repeat;
   align-content: center;
@@ -101,6 +100,15 @@ img {
 
 form {
   padding-left: 1vh;
+}
+
+#trainer-picture {
+  height: 470px;
+  width: 450px;
+}
+
+body {
+  background-color: black;
 }
 
 /*# sourceMappingURL=output.css.map */
