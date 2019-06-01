@@ -147,12 +147,15 @@ kevin.addPokemon("volcarona")
 
 function fetch(trainer){
   window.speechSynthesis.cancel();
+  document.getElementById('first-page').style.display = "none";
+  document.getElementById('second-page').style.display = "block";
   if(document.getElementById('trainer-container').childElementCount > 1){
     document.getElementById('trainer-container').removeChild(document.getElementById('trainer-container').children[1])
   }
   trainerimg = document.createElement('IMG')
   if(trainer == 'jimmy'){
     trainerimg.setAttribute("src", jimmyTrainer)
+    document.getElementById('second-page').style.backgroundColor = "black";
   } else if (trainer == 'ajaeb') {
     trainerimg.setAttribute("src", ajaebTrainer)
   } else{
@@ -174,6 +177,12 @@ function fetch(trainer){
     document.getElementById('dropdown').appendChild(his)
 
   }
+}
+
+function gotoFirstPage(){
+  window.speechSynthesis.cancel();
+  document.getElementById('first-page').style.display = "block";
+  document.getElementById('second-page').style.display = "none";
 }
 
 

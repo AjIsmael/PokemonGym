@@ -1,9 +1,13 @@
 
-.first-page{
+#first-page{
+  display: block;
   height: 100vh;
 }
+#second-page{
+  display: none;
+}
 
-.first-page img{
+#first-page img{
   z-index: 0;
   width: 30%;
   position: absolute;
