@@ -83,7 +83,7 @@ class Pokemon{
     this.id = id
     this.height = height
     this.weight = weight
-    this.abilities = ability
+    this.abilities = abilities
     this.type = type
     this.hp = hp
     this.attack = attack
@@ -92,7 +92,6 @@ class Pokemon{
     this.special_defense = special_defense
     this.speed = speed
     this.url = url
-    console.log(this);
     if(trainerArrayName.includes(this.name)){
       let b = trainerArrayName.indexOf(this.name)
       trainerArray.splice(b,1)
@@ -142,11 +141,13 @@ kevin = new Trainer("Kevin")
 kevin.addPokemon("gallade")
 kevin.addPokemon("mismagius")
 kevin.addPokemon("volcarona")
+blank = new Pokemon ("","","","","","","","","","","","","https://www.freepngimg.com/thumb/pokemon/37483-9-pokeball-transparent-background.png  ",[""],[""])
 
 
 
 function fetch(trainer){
   window.speechSynthesis.cancel();
+  show(blank);
   document.getElementById('first-page').style.display = "none";
   document.getElementById('second-page').style.display = "block";
   if(document.getElementById('trainer-container').childElementCount > 1){
@@ -220,10 +221,11 @@ function gotoFirstPage(){
 
 
 function show(pokemon) {
+  window.speechSynthesis.cancel()
   document.getElementById('height').innerHTML = pokemon.height
   document.getElementById('weight').innerHTML = pokemon.weight
   document.getElementById('name').innerHTML = pokemon.name
-  document.getElementById('ability').innerHTML = pokemon.abilities
+  document.getElementById('ability').innerText = pokemon.abilities
   document.getElementById('type').innerHTML = pokemon.type
   document.getElementById('hp').innerHTML = pokemon.hp
   document.getElementById('id').innerHTML = pokemon.id
