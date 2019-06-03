@@ -1,16 +1,24 @@
 
-.first-page{
+#first-page{
+  display: block;
   height: 100vh;
 }
-
-.first-page img{
-  width: 15%;
-  position: absolute;
-  top: 17%;
-  left: 6%;
-  animation: fade-out 3s  infinite normal;
+#second-page{
+  display: none;
 }
 
+#first-page img{
+  z-index: 0;
+  width: 30%;
+  position: absolute;
+  top: 8%;
+  left: 35%;
+  animation: fade-out 3s  infinite normal;
+}
+.card {
+  top:25vh;
+  opacity: 0.8;
+}
 @keyframes fade-out {
   0% {
         transform: rotateY(0);

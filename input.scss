@@ -42,7 +42,7 @@ body{
 .info-stat{
   border: 5px solid rgba(153, 51, 51, 0.8);
   border-radius: 20px;
-  background-color: rgba(153, 51, 51, 0.1);
+  background-color: rgba(192, 192, 192, 0.3);
   min-height: 25vh;
   margin-bottom: 1vh;
   .row{
@@ -90,11 +90,11 @@ form{
 
 }
 
-// #trainer-picture{
-// }
 
 body{
-  background-color: black;
+  label{
+    color: yellow;
+  }
 }
 
 #trainer-container{
