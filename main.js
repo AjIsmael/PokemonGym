@@ -153,13 +153,46 @@ function fetch(trainer){
     document.getElementById('trainer-container').removeChild(document.getElementById('trainer-container').children[1])
   }
   trainerimg = document.createElement('IMG')
+  trainerPage = document.getElementById("second-page");
   if(trainer == 'jimmy'){
     trainerimg.setAttribute("src", jimmyTrainer)
     document.getElementById('second-page').style.backgroundColor = "black";
+    document.getElementById('trainer-title').innerText = "Thrones of Thieves";
+    labels = trainerPage.getElementsByTagName('label');
+    for (label of labels) {
+      label.style.color = "yellow";
+    }
+    info = trainerPage.getElementsByTagName('h5');
+    for (information of info) {
+      information.style.color = "red";
+    }
+    document.getElementById('pokemon-detail').style.color = "red";
   } else if (trainer == 'ajaeb') {
     trainerimg.setAttribute("src", ajaebTrainer)
+    document.getElementById('second-page').style.backgroundColor = "grey";
+    document.getElementById('trainer-title').innerText = "Master of Confusion";
+    labels = trainerPage.getElementsByTagName('label');
+    for (label of labels) {
+      label.style.color = "yellow";
+    }
+    info = trainerPage.getElementsByTagName('h5');
+    for (information of info) {
+      information.style.color = "#F5F5F5";
+    }
+    document.getElementById('pokemon-detail').style.color = "#F5F5F5";
   } else{
     trainerimg.setAttribute("src", kevinTrainer)
+    document.getElementById('second-page').style.backgroundColor = "#DCDCDC";
+    document.getElementById('trainer-title').innerText = "Meister of Dawn and Dusk";
+    labels = trainerPage.getElementsByTagName('label');
+    for (label of labels) {
+      label.style.color = "#494949";
+    }
+    info = trainerPage.getElementsByTagName('h5');
+    for (information of info) {
+      information.style.color = "#2A3282";
+    }
+    document.getElementById('pokemon-detail').style.color = "#2A3282";
   }
 
   trainerimg.setAttribute("id", "trainer-trainerPicture")
