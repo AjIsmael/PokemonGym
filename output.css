@@ -40,6 +40,16 @@
     opacity: 1;
   }
 }
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 body {
   margin: 0;
   font-family: Verdana, Geneva, sans-serif;
@@ -132,8 +142,7 @@ body label {
 #trainer-container img {
   height: 470px;
   width: 450px;
-  animation: bounce-1;
-  animation-duration: 2s;
+  animation: scale-up-center 1s 1 cubic-bezier(0.07, 0.82, 0.86, 0.04) alternate;
 }
 
 #first-page {
