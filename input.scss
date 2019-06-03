@@ -1,5 +1,6 @@
-@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+// @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
 @import "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css";
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
 
 @keyframes bounce-1 {
     0%   { transform: translate(-100px,0);}
@@ -10,6 +11,20 @@
     75%  { transform: translate(-30px,-50px);transform: scale3d(0.5,0.5,0.5);}
     90% { transform: translate(-15px,-25px);transform: scale3d(1,1,1);}
     100% { transform: translate(0,0);}
+}
+@keyframes fadeIn{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 body{
@@ -26,6 +41,18 @@ body{
   min-height: 83vh;
 }
 
+.progress-bar-warning{
+  background-color:#f0ad4e;
+}
+
+.progress-bar-success {
+  background-color:#5cb85c;
+}
+
+.progress-bar-danger {
+  background-color:#d9534f;
+}
+
 .first-container{
   margin-top: 2vh;
   margin-bottom: 2vh;
@@ -38,7 +65,7 @@ body{
 .info-stat{
   border: 5px solid rgba(153, 51, 51, 0.8);
   border-radius: 20px;
-  background-color: rgba(153, 51, 51, 0.1);
+  background-color: rgba(192, 192, 192, 0.3);
   min-height: 25vh;
   margin-bottom: 1vh;
   .row{
@@ -58,12 +85,10 @@ img {
   height: 80%;
   width: 80%;
   object-fit: scale-down;
-  animation: bounce-1;
-  animation-duration: 2s;
 }
 
 #pokemon-picture {
-  background-image: url("computer_2.png");
+  // background-image: url("computer_2.png");
   background-size: contain;
   background-repeat: no-repeat;
   align-content: center;
@@ -81,4 +106,57 @@ img {
 
 form{
   padding-left: 1vh;
+}
+#poki-picture{
+  animation: fadeIn;
+  animation-duration: 2s;
+
+}
+
+
+body{
+  label{
+    color: yellow;
+  }
+}
+
+#trainer-container{
+  img {
+    height: 470px;
+    width: 450px;
+    // animation: scale-up-center;
+    // animation-duration: 2s;
+    animation: scale-up-center 1s 1 cubic-bezier(.07,.82,.86,.04) alternate;
+
+  }
+}
+
+
+#first-page{
+  display: block;
+  height: 100vh;
+}
+#second-page{
+  display: none;
+}
+
+#first-page img{
+  z-index: 0;
+  width: 30%;
+  position: absolute;
+  top: 8%;
+  left: 35%;
+  animation: fade-out 3s  infinite normal;
+}
+.card {
+  top:25vh;
+  opacity: 0.8;
+}
+@keyframes fade-out {
+  0% {
+        transform: rotateY(0);
+  }
+  100% {
+        transform: rotateY(360deg);
+  }
 }
